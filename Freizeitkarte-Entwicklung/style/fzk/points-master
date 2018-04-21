@@ -1215,7 +1215,7 @@ shop = organic & name = * {name "${name} ($__ORGANICSHOP__)"} [0x2e02 resolution
 shop = shoes & name = * {name "${name} ($__SHOES__)"} [0x2e07 resolution 24]
 
 # Supermarkt (großes Lebensmittelgeschäft). [point, closedway]
-shop = supermarket & name = * {name "${name} ($__SUPERMARKET__)"} [0x2e02 resolution 24]
+shop = supermarket & name = * {name "${name} ($__SUPERMARKET__)"} [0x2e02 resolution 23]
 
 # Baustoffhandel, Baumaterial: Steine,Holz, Zement ,etc. [point, closedway]
 shop = trade & name = * {name "${name} ($__TRADESHOP__)"} [0x2e08 resolution 24]
