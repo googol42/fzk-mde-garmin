@@ -562,6 +562,7 @@ natural = scree & name = * {name "${name} ($__SCREE__)"} [0x6600 resolution 24]
 natural = scrub & name = * {name "${name} ($__SCRUB__)"} [0x6600 resolution 24]
 
 # Quelle. [point]
+natural = spring {name ""}                                      [0x6511 resolution 22-23 continue]
 natural = spring {name "${name} ($__SPRING__)" | "$__SPRING__"} [0x6511 resolution 24]
 
 # Großer Stein, Findling. [point]
@@ -968,6 +969,7 @@ amenity = courthouse & name = * {name "${name} ($__COURTHOUSE__)"} [0x3004 resol
 
 # Trinkwasserstelle: Eine öffentlich zugängliche Trinkwasserstelle.
 #ifdef DRINKINGWATER
+  amenity = drinking_water {name ""}                                                    [0x6414 resolution 22-23 continue]
   amenity = drinking_water {name "${name} ($__DRINKINGWATER__)" | "$__DRINKINGWATER__"} [0x6414 resolution 24]
 #endif
 
