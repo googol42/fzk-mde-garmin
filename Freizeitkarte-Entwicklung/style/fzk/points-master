@@ -466,10 +466,10 @@ tourism = lean_to & name = *           {name "${name}"}          [0x4807 resolut
 tourism = lean_to & ele = *            {name "$__LEANTO__ (${ele})"} [0x4807 resolution 23]
 tourism = lean_to                      {name "$__LEANTO__"}          [0x4807 resolution 23]
 # Lean-to (Schutzhütte, Berghütte), new Tagging version [point, closedway
-amenity = shelter & shelter_type = lean_to & name = * & ele = * {name "${name} (${ele})"} [0x4807 resolution 23]
-amenity = shelter & shelter_type = lean_to & name = *           {name "${name}"}          [0x4807 resolution 23]
-amenity = shelter & shelter_type = lean_to & ele = *            {name "$__LEANTO__ (${ele})"} [0x4807 resolution 23]
-amenity = shelter & shelter_type = lean_to                      {name "$__LEANTO__"}          [0x4807 resolution 23]
+amenity = shelter & shelter_type = lean_to & name = * & ele = * {name "${name} (${ele})"} [0x4807 resolution 22]
+amenity = shelter & shelter_type = lean_to & name = *           {name "${name}"}          [0x4807 resolution 22]
+amenity = shelter & shelter_type = lean_to & ele = *            {name "$__LEANTO__ (${ele})"} [0x4807 resolution 22]
+amenity = shelter & shelter_type = lean_to                      {name "$__LEANTO__"}          [0x4807 resolution 22]
 
 # Motel. [point, closedway]
 tourism = motel & name = * { name "${stars}* ${name} ($__MOTEL__)" | "${name} ($__MOTEL__)" } [0x2b01 resolution 24]
