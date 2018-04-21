@@ -585,7 +585,7 @@ natural = volcano {name "${name} ($__VOLCANO__)" | "$__VOLCANO__"} [0x2c0c resol
 natural = water & name = * {name "${name} ($__WATER__)"} [0x650D resolution 24]
 
 # Wasserfall. [point]
-natural = waterfall {name "${name} ($__WATERFALL__)" | "$__WATERFALL__"} [0x6508 resolution 24]
+natural = waterfall {name "${name} ($__WATERFALL__)" | "$__WATERFALL__"} [0x6508 resolution 23]
 
 # Feuchtgebiet wie Sumpf, Moor, Ried, Marsch, Aue, Röhricht, Watt, Salzwiese oder Mangrove.
 # Naturbelassene Flächen, die Überflutungen ausgesetzt sind oder staunasse Böden aufweisen. [point, closedway]
