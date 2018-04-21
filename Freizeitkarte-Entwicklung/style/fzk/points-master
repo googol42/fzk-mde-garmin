@@ -571,6 +571,7 @@ natural = spring {name ""}                                      [0x6511 resoluti
 natural = spring {name "${name} ($__SPRING__)" | "$__SPRING__"} [0x6511 resolution 24]
 
 # Großer Stein, Findling. [point]
+natural = stone {name ""}                                    [0x6614 resolution 23-23 continue]
 natural = stone {name "${name} ($__STONE__)" | "$__STONE__"} [0x6614 resolution 24]
 
 # Einzelner oder signifikanter Baum. [point]
