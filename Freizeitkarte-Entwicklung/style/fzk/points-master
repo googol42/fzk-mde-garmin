@@ -517,7 +517,7 @@ natural = bay & name = * {name "${name} ($__BAY__)"} [0x6503 resolution 24]
 natural = beach & name = * {name "${name} ($__BEACH__)"} [0x6604 resolution 24]
 
 # Eingang zu einer Höhle. [point, closedway]
-natural = cave_entrance {name "${name} ($__CAVEENTRANCE__)"} [0x6601 resolution 24]
+natural = cave_entrance {name "${name} ($__CAVEENTRANCE__)"} [0x6601 resolution 23]
 
 # Klippe. [point, way, closedway]
 natural = cliff & name = * {name "${name} ($__CLIFF__)"} [0x6607 resolution 23]
