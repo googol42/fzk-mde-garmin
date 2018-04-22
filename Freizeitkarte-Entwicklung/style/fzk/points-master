@@ -485,7 +485,7 @@ tourism = picnic_site {name "${name} ($__PICNICSITE__)" | "$__PICNICSITE__"} [0x
 # amenity = bench {name "Sitzbank" } [0x6605 resolution 24]
 
 # Hunting Stand - abusing 'Garmin Dealer' type
-amenity = hunting_stand {name "${name} (Jägerstand)"} [0x2F0F resolution 24 default_name 'Jägerstand']
+amenity = hunting_stand {name "${name} (Jägerstand)"} [0x2F0F resolution 23 default_name 'Jägerstand']
 
 # Freizeitpark, Themenpark. [point, closedway]
 tourism = theme_park & name = * {name "${name} ($__THEMEPARK__)"} [0x2C01 resolution 24]
