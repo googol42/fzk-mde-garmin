@@ -417,15 +417,15 @@ tourism = artwork & name = * {name "${name} ($__ARTWORK__)"} [0x6600 resolution 
 # Basic hut (Schutzhütte, Berghütte). [point, closedway]
 # A basic hut is a building located in the mountains or into the wild intended
 # to provide basic shelter, sleeping, to hikers and climbers.
-tourism = basic_hut & name = * & ele = * {name "${name} (${ele})"}   [0x4805 resolution 23]
-tourism = basic_hut & name = *           {name "${name}"}            [0x4805 resolution 23]
-tourism = basic_hut & ele = *            {name "$__BASICHUT__ (${ele})"} [0x4805 resolution 23]
-tourism = basic_hut                      {name "$__BASICHUT__"}          [0x4805 resolution 23]
+tourism = basic_hut & name = * & ele = * {name "${name} (${ele})"}   [0x4805 resolution 22]
+tourism = basic_hut & name = *           {name "${name}"}            [0x4805 resolution 22]
+tourism = basic_hut & ele = *            {name "$__BASICHUT__ (${ele})"} [0x4805 resolution 22]
+tourism = basic_hut                      {name "$__BASICHUT__"}          [0x4805 resolution 22]
 # Basic hut (new tagging) [point, closedway]
-amenity = shelter & shelter_type = basic_hut & name = * & ele = * {name "${name} (${ele})"}   [0x4805 resolution 23]
-amenity = shelter & shelter_type = basic_hut & name = *           {name "${name}"}            [0x4805 resolution 23]
-amenity = shelter & shelter_type = basic_hut & ele = *            {name "$__BASICHUT__ (${ele})"} [0x4805 resolution 23]
-amenity = shelter & shelter_type = basic_hut                      {name "$__BASICHUT__"}          [0x4805 resolution 23]
+amenity = shelter & shelter_type = basic_hut & name = * & ele = * {name "${name} (${ele})"}   [0x4805 resolution 22]
+amenity = shelter & shelter_type = basic_hut & name = *           {name "${name}"}            [0x4805 resolution 22]
+amenity = shelter & shelter_type = basic_hut & ele = *            {name "$__BASICHUT__ (${ele})"} [0x4805 resolution 22]
+amenity = shelter & shelter_type = basic_hut                      {name "$__BASICHUT__"}          [0x4805 resolution 22]
 
 # Bed & Breakfast. [point, closedway]
 tourism = bed_and_breakfast & name = * { name "${name} ($__BEDANDBREAKFAST__)" } [0x2b02 resolution 24]
@@ -1005,7 +1005,7 @@ amenity = post_office {name "${name} ($__POSTOFFICE__)" | "$__POSTOFFICE__"} [0x
 amenity = public_building & name = * {name "${name} ($__PUBLICBUILDING__)"} [0x3007 resolution 24]
 
 # Ein Unterstand ist ein überdachter offener Platz als Schutz vor der Witterung. [point, closedway]
-amenity = shelter {name "${name} ($__SHELTER__)" | "$__SHELTER__"} [0x2b06 resolution 23]
+amenity = shelter {name "${name} ($__SHELTER__)" | "$__SHELTER__"} [0x2b06 resolution 22]
 
 # Öffentliche Toilette / public toilet (z.T. mit Gebühr). [point, closedway]
 amenity = toilets [0x2f0c resolution 24]
