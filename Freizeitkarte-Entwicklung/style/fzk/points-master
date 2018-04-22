@@ -390,6 +390,9 @@
 # - deshalb erfolgt hier die Verarbeitung vor "amenity"
 # ------------------------------------------------------------
 
+# Add opening hours to all names
+name=* & opening_hours=* {set name  = '${name} - ${opening_hours}'}
+
 # Schutzhütte, Berghütte. [point, closedway]
 # siehe auch "amenity = shelter"
 # Bewirtschaftete Berghütten
