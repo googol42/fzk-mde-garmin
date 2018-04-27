@@ -559,8 +559,9 @@ natural = peak & name = * & ele = * {name "${name} (${ele})"} [0x6616 resolution
 natural = peak & name = *           {name ""}                 [0x6616 resolution 22-23 continue]
 natural = peak & name = *           {name "${name}"}          [0x6616 resolution 24]
 natural = peak & ele = *            {name ""}                 [0x6616 resolution 22-23 continue]
-natural = peak & ele = *            {name "${ele}"}           [0x6616 resolution 24]
-natural = peak                      {name ""}                 [0x6616 resolution 22]
+natural = peak & ele = *            {name "N.N. (${ele})"}    [0x6616 resolution 24]
+natural = peak                      {name ""}                 [0x6616 resolution 22-23 continue]
+natural = peak                      {name "N.N."}             [0x6616 resolution 24]
 
 # Boden mit Sand bedeckt, kein oder nur spärlicher Bewuchs. [point, closedway]
 natural = sand & name = * {name "${name} ($__SAND__)"} [0x6600 resolution 24]
