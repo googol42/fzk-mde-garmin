@@ -482,13 +482,23 @@ tourism = picnic_site {name "${name} ($__PICNICSITE__)" | "$__PICNICSITE__"} [0x
 amenity = bench {name "Sitzbank" } [0x6605 resolution 24]
 
 # Hunting Stand - abusing 'Garmin Dealer' type
+#ifdef EXPLORE
+amenity = hunting_stand {name "${name} (Jägerstand)"} [0x2F0F resolution 24 default_name 'Jägerstand']
+#endif
+#ifndef EXPLORE
 amenity = hunting_stand {name "${name} (Jägerstand)"} [0x2F0F resolution 23 default_name 'Jägerstand']
+#endif
 
 # Freizeitpark, Themenpark. [point, closedway]
 tourism = theme_park & name = * {name "${name} ($__THEMEPARK__)"} [0x2C01 resolution 24]
 
 # Aussichtspunkt. [point]
+#ifdef EXPLORE
+tourism = viewpoint [0x5200 resolution 23]
+#endif
+#ifndef EXPLORE
 tourism = viewpoint [0x5200 resolution 24]
+#endif
 
 # Wilderness hut (Schutzhütte, Berghütte). [point, closedway]
 # A wilderness hut is a building located in the mountains or into the wild intended
@@ -514,10 +524,20 @@ natural = bay & name = * {name "${name} ($__BAY__)"} [0x6503 resolution 24]
 natural = beach & name = * {name "${name} ($__BEACH__)"} [0x6604 resolution 24]
 
 # Eingang zu einer Höhle. [point, closedway]
+#ifdef EXPLORE
+natural = cave_entrance {name "${name} ($__CAVEENTRANCE__)"} [0x6601 resolution 20]
+#endif
+#ifndef EXPLORE
 natural = cave_entrance {name "${name} ($__CAVEENTRANCE__)"} [0x6601 resolution 23]
+#endif
 
 # Klippe. [point, way, closedway]
+#ifdef EXPLORE
+natural = cliff & name = * {name "${name} ($__CLIFF__)"} [0x6607 resolution 20]
+#endif
+#ifndef EXPLORE
 natural = cliff & name = * {name "${name} ($__CLIFF__)"} [0x6607 resolution 23]
+#endif
 
 # Pass: Markiert die hoechste Stelle eines Gebirgspasses. [point] (s.a. natural=peak, natural=col)
 (mountain_pass = yes) & name = * & ele = * {name "${name} (${ele})"} [0x6617 resolution 23]
@@ -587,7 +607,12 @@ natural = volcano {name "${name} ($__VOLCANO__)" | "$__VOLCANO__"} [0x2c0c resol
 natural = water & name = * {name "${name} ($__WATER__)"} [0x650D resolution 24]
 
 # Wasserfall. [point]
+#ifdef EXPLORE
+natural = waterfall {name "${name} ($__WATERFALL__)" | "$__WATERFALL__"} [0x6508 resolution 20]
+#endif
+#ifndef EXPLORE
 natural = waterfall {name "${name} ($__WATERFALL__)" | "$__WATERFALL__"} [0x6508 resolution 23]
+#endif
 
 # Feuchtgebiet wie Sumpf, Moor, Ried, Marsch, Aue, Röhricht, Watt, Salzwiese oder Mangrove.
 # Naturbelassene Flächen, die Überflutungen ausgesetzt sind oder staunasse Böden aufweisen. [point, closedway]
