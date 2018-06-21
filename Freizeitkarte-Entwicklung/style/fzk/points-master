@@ -390,6 +390,10 @@
 # - deshalb erfolgt hier die Verarbeitung vor "amenity"
 # ------------------------------------------------------------
 
+# TODOs:
+# water_well : anderen Typ? Weil der ist relativ allgemein
+# Springbrunnen rendern?
+
 # Schutzhütte, Berghütte. [point, closedway]
 # siehe auch "amenity = shelter"
 # Bewirtschaftete Berghütten
@@ -1011,7 +1015,6 @@ amenity = drinking_water & drinking_water:legal = no  {name "(ln) ${name} ($__DR
 amenity = drinking_water & drinking_water = no        {name "(n) ${name} ($__DRINKINGWATER__)" | "(n) $__DRINKINGWATER__"} [0x6414 resolution 22]
 amenity = drinking_water                              {name "${name} ($__DRINKINGWATER__)" | "$__DRINKINGWATER__"} [0x6414 resolution 22]
 
-# TODO: Typ ändern
 # amenity = fountain & drinking_water:legal = yes {name "(ly) ${name} (Springbrunnen)" | "(ly) Springbrunnen"} [0x6414 resolution 22]
 # amenity = fountain & drinking_water = yes       {name "(y) ${name} (Springbrunnen)" | "(y) Springbrunnen"} [0x6414 resolution 22]
 # amenity = fountain & drinking_water:legal = no  {name "(ln) ${name} (Springbrunnen)" | "(ln) Springbrunnen"} [0x6414 resolution 22]
