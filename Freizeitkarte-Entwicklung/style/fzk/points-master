@@ -851,8 +851,8 @@ amenity = restaurant & cuisine = sushi   & name = * {set name = "${name} ($__SUS
 amenity = restaurant & cuisine = steak_house & name = * {set name = "${name} ($__STEAKHOUSE__)"} [0x2a0c resolution 24]
 
 # Bagel / Donut.
-amenity = restaurant & cuisine = bagel & name = * {set name = "${name} (${cuisine}, $__RESTAURANT__)"} [0x2a0d resolution 24]
-amenity = restaurant & cuisine = cake  & name = * {set name = "${name} (${cuisine}, $__RESTAURANT__)"} [0x2a0d resolution 24]
+amenity = restaurant & cuisine = bagel & name = * {set name = "${name} (${cuisine}, $__RESTAURANT__)"} [0x2e0a resolution 24]
+amenity = restaurant & cuisine = cake  & name = * {set name = "${name} (${cuisine}, $__RESTAURANT__)"} [0x2e0a resolution 24]
 
 # Cafe / Bar.
 amenity = restaurant & cuisine = coffee_shop & name = * {set name = "${name} ($__COFFEESHOP__)"} [0x2a0e resolution 24]
@@ -1215,7 +1215,7 @@ shop = fashion  & name = * {name "${name} ($__FASION__)"} [0x2e07 resolution 24]
 shop = computer & name = * {name "${name} ($__COMPUTER__)"} [0x2e0b resolution 24]
 
 # Süßwarenhändler, Confiserie, Konditorei. [point, closedway]
-shop = confectionery & name = * {name "${name} ($__CONFECTIONERY__)"} [0x2a0d resolution 24]
+shop = confectionery & name = * {name "${name} ($__CONFECTIONERY__)"} [0x2e0a resolution 24]
 
 # Nachbarschaftsladen, Lebensmittelgeschäft, Tante-Emma-Laden. [point, closedway]
 shop = convenience & name = * {name "${name} ($__CONVENIENCE__)"} [0x2e02 resolution 24]
