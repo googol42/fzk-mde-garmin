@@ -413,7 +413,7 @@ tourism = aquarium & name = * {name "${name} ($__AQUARIUM__)"} [0x2c07 resolutio
 
 # Sehenswürdigkeit. [point, closedway]
 # (Excluding worship places here, that tag should be stronger than attraction)
-tourism = attraction & name = * & amenity != place_of_worship {name "${name} ($__ATTRACTION__)"} [0x6600 resolution 24]
+tourism = attraction & name = * & amenity != place_of_worship & natural != waterfall {name "${name} ($__ATTRACTION__)"} [0x6600 resolution 24]
 
 # Kunstwerk, Kunstobjekt. [point, closedway]
 tourism = artwork & name = * {name "${name} ($__ARTWORK__)"} [0x6600 resolution 24]
@@ -421,9 +421,9 @@ tourism = artwork & name = * {name "${name} ($__ARTWORK__)"} [0x6600 resolution 
 # Basic hut (Schutzhütte, Berghütte). [point, closedway]
 # A basic hut is a building located in the mountains or into the wild intended
 # to provide basic shelter, sleeping, to hikers and climbers.
-tourism = basic_hut {name "${name} (${ele})" | "§{name}" | "$__BASICHUT__ (${ele})" | "$__BASICHUT__"}          [0x4805 resolution 22]
+tourism = basic_hut {name "${name} (${ele}) ($__BASICHUT__)" | "§{name} ($__BASICHUT__)" | "$__BASICHUT__ (${ele})" | "$__BASICHUT__"}          [0x4805 resolution 22]
 # Basic hut (new tagging) [point, closedway]
-amenity = shelter & shelter_type = basic_hut {name "${name} (${ele})" | "${name}" | "$__BASICHUT__ (${ele})" | "$__BASICHUT__"} [0x4805 resolution 22]
+amenity = shelter & shelter_type = basic_hut {name "${name} (${ele}) ($__BASICHUT__)" | "${name} ($__BASICHUT__)" | "$__BASICHUT__ (${ele})" | "$__BASICHUT__"} [0x4805 resolution 22]
 
 # Bed & Breakfast. [point, closedway]
 tourism = bed_and_breakfast & name = * { name "${name} ($__BEDANDBREAKFAST__)" } [0x2b02 resolution 24]
@@ -458,9 +458,9 @@ tourism = information & information = guidepost & (hiking = yes | guidepost = hi
 
 # Lean-to (Schutzhütte, Berghütte). [point, closedway]
 # A lean-to is a building located in the mountains or into the wild intended to provide shelter against rain.
-tourism = lean_to {name "$(L) {name} (${ele})" | "(L) ${name}" | "$__LEANTO__ (${ele})" | "$__LEANTO__"} [0x4807 resolution 23]
+tourism = lean_to {name "${name} (${ele} ($__LEANTO__))" | "${name} ($__LEANTO__)" | "$__LEANTO__ (${ele})" | "$__LEANTO__"} [0x4807 resolution 23]
 # Lean-to (Schutzhütte, Berghütte), new Tagging version [point, closedway
-amenity = shelter & shelter_type = lean_to {name "${name} (${ele})" | "${name}" | "$__LEANTO__ (${ele})" | "$__LEANTO__"} [0x4807 resolution 22]
+amenity = shelter & shelter_type = lean_to {name "${name} (${ele}) ($__LEANTO__)" | "${name} ($__LEANTO__)" | "$__LEANTO__ (${ele})" | "$__LEANTO__"} [0x4807 resolution 22]
 
 # Motel. [point, closedway]
 tourism = motel & name = * { name "${stars}* ${name} ($__MOTEL__)" | "${name} ($__MOTEL__)" } [0x2b01 resolution 24]
@@ -494,7 +494,7 @@ tourism = viewpoint [0x5200 resolution 24]
 # Wilderness hut (Schutzhütte, Berghütte). [point, closedway]
 # A wilderness hut is a building located in the mountains or into the wild intended
 # to provide shelter, heating to hikers and climbers.
-tourism = wilderness_hut {name "${name} (${ele})" | "${name}" | "$__WILDERNESSHUT__ (${ele})" | "$__WILDERNESSHUT__"} [0x4806 resolution 23]
+tourism = wilderness_hut {name "${name} (${ele}) ($__WILDERNESSHUT__)" | "${name} ($__WILDERNESSHUT__)" | "$__WILDERNESSHUT__ (${ele})" | "$__WILDERNESSHUT__"} [0x4806 resolution 23]
 
 # Zoologischer Garten (Zoo), Tierpark. [point, closedway]
 tourism = zoo & name = * {name "${name} ($__ZOO__)"} [0x2C07 resolution 24]
@@ -1023,7 +1023,17 @@ amenity = post_office {name "${name} ($__POSTOFFICE__)" | "$__POSTOFFICE__"} [0x
 amenity = public_building & name = * {name "${name} ($__PUBLICBUILDING__)"} [0x3007 resolution 24]
 
 # Ein Unterstand ist ein überdachter offener Platz als Schutz vor der Witterung. [point, closedway]
-amenity = shelter {name "${name} (${ele})" | "${name}" | "$__SHELTER__ (${ele})" | "$__SHELTER__"} [0x2b06 resolution 22]
+# amenity = shelter & name = * {name "${name} ($__SHELTER__)" | "$__SHELTER__"} [0x2b08 resolution 22]
+amenity = shelter {
+    name "${name} (${ele}) (${shelter_type})" |
+         "${name} (${ele}) ($__SHELTER__)" |
+         "${name} (${shelter_type})" |
+         "${name} ($__SHELTER__)" |
+         "${shelter_type} (${ele})" |
+         "$__SHELTER__ (${ele})" |
+         "${shelter_type}" |
+         "$__SHELTER__"
+} [0x2b06 resolution 22]
 
 # Öffentliche Toilette / public toilet (z.T. mit Gebühr). [point, closedway]
 amenity = toilets [0x2f0c resolution 24]
