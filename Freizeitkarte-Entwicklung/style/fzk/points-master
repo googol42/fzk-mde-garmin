@@ -473,7 +473,7 @@ tourism = museum & name = * {name "${name} ($__MUSEUM__)"} [0x2c02 resolution 24
 
 # Rastplatz (Picknick). [point, closedway]
 tourism = picnic_site {name "${name} ($__PICNICSITE__)" | "$__PICNICSITE__"} [0x4a00 resolution 24]
-amenity = bench {name "Sitzbank" } [0x6605 resolution 24]
+amenity = bench {name "${name} (Sitzbank)" | "Sitzbank" } [0x6605 resolution 24]
 
 # Hunting Stand - abusing 'Garmin Dealer' type
 #ifdef EXPLORE
