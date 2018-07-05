@@ -421,10 +421,7 @@ tourism = artwork & name = * {name "${name} ($__ARTWORK__)"} [0x6600 resolution 
 # Basic hut (Schutzhütte, Berghütte). [point, closedway]
 # A basic hut is a building located in the mountains or into the wild intended
 # to provide basic shelter, sleeping, to hikers and climbers.
-tourism = basic_hut & name = * & ele = * {name "${name} (${ele})"}   [0x4805 resolution 22]
-tourism = basic_hut & name = *           {name "${name}"}            [0x4805 resolution 22]
-tourism = basic_hut & ele = *            {name "$__BASICHUT__ (${ele})"} [0x4805 resolution 22]
-tourism = basic_hut                      {name "$__BASICHUT__"}          [0x4805 resolution 22]
+tourism = basic_hut {name "${name} (${ele})" | "§{name}" | "$__BASICHUT__ (${ele})" | "$__BASICHUT__"}          [0x4805 resolution 22]
 # Basic hut (new tagging) [point, closedway]
 amenity = shelter & shelter_type = basic_hut {name "${name} (${ele})" | "${name}" | "$__BASICHUT__ (${ele})" | "$__BASICHUT__"} [0x4805 resolution 22]
 
