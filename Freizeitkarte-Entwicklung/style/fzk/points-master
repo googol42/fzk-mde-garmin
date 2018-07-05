@@ -1114,7 +1114,7 @@ man_made = water_tower & name = * {name "${name} ($__WATERTOWER__)"} [0x6500 res
 man_made = water_works & name = * {name "${name} ($__WATERWORKS__)"} [0x6500 resolution 24]
 
 # (Tief-)Brunnen, (Wikipedia) ein Bauwerk zur Wassergewinnung aus einem Grundwasserleiter (Aquifer). [point, closedway]
-man_made = water_well {name "${name} ($__WATERWELL__)" | "$__WATERWELL__"} [0x6500 resolution 24]
+man_made = water_well {name "${name} ($__WATERWELL__)" | "$__WATERWELL__"} [0x6411 resolution 24]
 
 # Historische Windmühle. [point, closedway]
 man_made = windmill & name = * {name "${name} ($__WINDMILL__)"} [0x6600 resolution 24]
