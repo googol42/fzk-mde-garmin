@@ -465,10 +465,6 @@ tourism = motel & name = * { name "${stars}* ${name} ($__MOTEL__)" | "${name} ($
 # Museum.
 tourism = museum & name = * {name "${name} ($__MUSEUM__)"} [0x2c02 resolution 24]
 
-# Rastplatz (Picknick). [point, closedway]
-tourism = picnic_site {name "${name} ($__PICNICSITE__)" | "$__PICNICSITE__"} [0x4a00 resolution 24]
-amenity = bench {name "${name} (Sitzbank)" | "Sitzbank" } [0x6605 resolution 24]
-
 # Hunting Stand - abusing 'Garmin Dealer' type
 #ifdef EXPLORE
 amenity = hunting_stand {name "${name} (Jägerstand)"} [0x2F0F resolution 24 default_name 'Jägerstand']
@@ -1031,6 +1027,10 @@ amenity = shelter {
          "${shelter_type}" |
          "$__SHELTER__"
 } [0x2b06 resolution 22]
+
+# Rastplatz (Picknick). [point, closedway]
+tourism = picnic_site {name "${name} ($__PICNICSITE__)" | "$__PICNICSITE__"} [0x4a00 resolution 24]
+amenity = bench {name "${name} (Sitzbank)" | "Sitzbank" } [0x6605 resolution 24]
 
 # Öffentliche Toilette / public toilet (z.T. mit Gebühr). [point, closedway]
 amenity = toilets [0x2f0c resolution 24]
