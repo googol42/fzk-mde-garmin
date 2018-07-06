@@ -397,16 +397,10 @@
 # Schutzhütte, Berghütte. [point, closedway]
 # siehe auch "amenity = shelter"
 # Bewirtschaftete Berghütten
-tourism = alpine_hut & name = * & ele = * & amenity = restaurant {name "${name} (${ele})"}   [0x4803 resolution 23]
-tourism = alpine_hut & name = * & amenity = restaurant           {name "${name}"}            [0x4803 resolution 23]
-tourism = alpine_hut & ele = * & amenity = restaurant            {name "$__ALPINEHUT__ (${ele})"} [0x4803 resolution 23]
-tourism = alpine_hut & amenity = restaurant                      {name "$__ALPINEHUT__"}          [0x4803 resolution 23]
+tourism = alpine_hut & amenity = restaurant {name "${name} (${ele})" | "${name}" | "$__ALPINEHUT__ (${ele})" | "$__ALPINEHUT__"} [0x4803 resolution 23]
 
 # Selbstversorger Berghütten
-tourism = alpine_hut & name = * & ele = * {name "${name} (${ele})"}   [0x4804 resolution 23]
-tourism = alpine_hut & name = *           {name "${name}"}            [0x4804 resolution 23]
-tourism = alpine_hut & ele = *            {name "$__ALPINEHUT__ (${ele})"} [0x4804 resolution 23]
-tourism = alpine_hut                      {name "$__ALPINEHUT__"}          [0x4804 resolution 23]
+tourism = alpine_hut {name "${name} (${ele})" | "${name}" | "$__ALPINEHUT__ (${ele})" | "$__ALPINEHUT__"} [0x4804 resolution 23]
 
 # Aquarium.
 tourism = aquarium & name = * {name "${name} ($__AQUARIUM__)"} [0x2c07 resolution 24]
@@ -521,20 +515,14 @@ natural = cliff & name = * {name "${name} ($__CLIFF__)"} [0x6607 resolution 23]
 #endif
 
 # Pass: Markiert die hoechste Stelle eines Gebirgspasses. [point] (s.a. natural=peak, natural=col)
-(mountain_pass = yes) & name = * & ele = * {name "${name} (${ele})"} [0x6617 resolution 23]
-(mountain_pass = yes) & name = *           {name "${name}"}          [0x6617 resolution 23]
-(mountain_pass = yes) & ele = *            {name "N.N. (${ele})"}    [0x6617 resolution 23]
-(mountain_pass = yes)                      {name "N.N."}             [0x6617 resolution 23]
+(mountain_pass = yes) {name "${name} (${ele})" | "${name}" | "N.N. (${ele})" | "N.N."} [0x6617 resolution 23]
 
 # Joch, Sattel. [point] (s.a. natural = peak)
 # col -    A high, narrow, sharp-edged pass or saddle through a divide or between two adjacent peaks in a mountain
 #          range; especially a deep pass formed by the headward erosion and intersection of two cirques.
 # saddle - A low point on a ridge or interfluve, generally a divide (pass, col) between the heads of streams
 #          flowing in opposite directions.
-(natural = col | natural = saddle) & name = * & ele = * {name "${name} (${ele})"} [0x661b resolution 23]
-(natural = col | natural = saddle) & name = *           {name "${name}"}          [0x661b resolution 23]
-(natural = col | natural = saddle) & ele = *            {name "N.N. (${ele})"}    [0x661b resolution 23]
-(natural = col | natural = saddle)                      {name "N.N."}             [0x661b resolution 23]
+(natural = col | natural = saddle) {name "${name} (${ele})" | "${name}" | "N.N. (${ele})" | "N.N."} [0x661b resolution 23]
 
 # Alm, Matten: Bereich oberhalb der Baumgrenze. [point, closedway]
 natural = fell & name = * {name "${name} ($__FELL__)"} [0x6600 resolution 24]
@@ -665,10 +653,7 @@ place = isolated_dwelling & name = * {name "${name} ($__ISOLATEDDWELLING__)"} [0
 
 # Ortsbezeichnung ohne Bezug auf Bevölkerung (z.B. "Wiesengrund", "Deutsches Eck"). [point, closedway]
 #-# place = locality & name = * {name "${name} (Ortsbezeichnung)"} [0x6600 resolution 24]
-place = locality & name = * & ele = * {name "${name} (${ele}) ($__LOCALITY__)"} [0x6600 resolution 23]
-place = locality & name = *           {name "${name} ($__LOCALITY__)"}          [0x6600 resolution 23]
-place = locality & ele = *            {name "N.N. (${ele}) ($__LOCALITY__)"}    [0x6600 resolution 23]
-place = locality                      {name "N.N. ($__LOCALITY__)"}             [0x6600 resolution 23]
+place = locality {name "${name} (${ele}) ($__LOCALITY__)" | "${name} ($__LOCALITY__)" | "N.N. (${ele}) ($__LOCALITY__)" | "N.N. ($__LOCALITY__)"} [0x6600 resolution 23]
 
 # Stadtteil, Stadtviertel. [point, closedway]
 place = suburb [0x0b00 resolution 21]
