@@ -1313,7 +1313,7 @@ highway = bus_stop {name "${name} ($__BUSSTOP__)" | "$__BUSSTOP__"} [0x2f08 reso
 
 # Autobahnausfahrt. ref sollte die Nummer oder andere ID der Ausfahrt enthalten.
 # Kann auch für nicht-Autobahnen verwendet werden. Beispiel: name=Ascheberg, ref=79
-highway = motorway_junction {name "${name} (${ref}) ($__MOTORWAYJUNCTION__)" | "${name} ($__MOTORWAYJUNCTION__)" | "${ref} ($__MOTORWAYJUNCTION__)"} [0x2900 resolution 23]
+highway = motorway_junction {name "${name} (${ref}) ($__MOTORWAYJUNCTION__)" | "${name} ($__MOTORWAYJUNCTION__)" | "${ref} ($__MOTORWAYJUNCTION__)"} [0x2900 resolution 24]
 
 # Place where drivers can leave the road to rest, but not refuel. [point, closedway]
 highway = rest_area {name "${name} ($__HIGHWAYRESTAREA__)" | "$__HIGHWAYRESTAREA__"} [0x2901 resolution 24]
