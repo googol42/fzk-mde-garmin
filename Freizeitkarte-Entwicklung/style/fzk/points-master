@@ -415,7 +415,6 @@ tourism = artwork & name = * {name "${name} ($__ARTWORK__)"} [0x6600 resolution 
 # Basic hut (Schutzhütte, Berghütte). [point, closedway]
 # A basic hut is a building located in the mountains or into the wild intended
 # to provide basic shelter, sleeping, to hikers and climbers.
-tourism = basic_hut {name "${name} (${ele}) ($__BASICHUT__)" | "§{name} ($__BASICHUT__)" | "$__BASICHUT__ (${ele})" | "$__BASICHUT__"}          [0x4805 resolution 22]
 # Basic hut (new tagging) [point, closedway]
 amenity = shelter & shelter_type = basic_hut {name "${name} (${ele}) ($__BASICHUT__)" | "${name} ($__BASICHUT__)" | "$__BASICHUT__ (${ele})" | "$__BASICHUT__"} [0x4805 resolution 22]
 
@@ -449,9 +448,8 @@ tourism = information & information = guidepost & (hiking = yes | guidepost = hi
 
 # Lean-to (Schutzhütte, Berghütte). [point, closedway]
 # A lean-to is a building located in the mountains or into the wild intended to provide shelter against rain.
-tourism = lean_to {name "${name} (${ele} ($__LEANTO__))" | "${name} ($__LEANTO__)" | "$__LEANTO__ (${ele})" | "$__LEANTO__"} [0x4807 resolution 23]
 # Lean-to (Schutzhütte, Berghütte), new Tagging version [point, closedway
-amenity = shelter & shelter_type = lean_to {name "${name} (${ele}) ($__LEANTO__)" | "${name} ($__LEANTO__)" | "$__LEANTO__ (${ele})" | "$__LEANTO__"} [0x4807 resolution 22]
+tourism = lean_to | (amenity = shelter & shelter_type = lean_to) {name "${name} (${ele}) ($__LEANTO__)" | "${name} ($__LEANTO__)" | "$__LEANTO__ (${ele})" | "$__LEANTO__"} [0x4807 resolution 22]
 
 # Motel. [point, closedway]
 tourism = motel & name = * { name "${stars}* ${name} ($__MOTEL__)" | "${name} ($__MOTEL__)" } [0x2b01 resolution 24]
