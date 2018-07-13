@@ -985,8 +985,18 @@ amenity = post_office {name "${name} ($__POSTOFFICE__)" | "$__POSTOFFICE__"} [0x
 # Öffentliches Gebäude.
 amenity = public_building & name = * {name "${name} ($__PUBLICBUILDING__)"} [0x3007 resolution 24]
 
+# Bushütte
+amenity = shelter & shelter_type = public_transport {
+    name "${name} (${ele}) (${shelter_type})" |
+         "${name} (${ele}) ($__SHELTER__)" |
+         "${name} (${shelter_type})" |
+         "${name} ($__SHELTER__)" |
+         "${shelter_type} (${ele})" |
+         "$__SHELTER__ (${ele})" |
+         "${shelter_type}" |
+         "$__SHELTER__"
+} [0x2b06 resolution 24]
 # Ein Unterstand ist ein überdachter offener Platz als Schutz vor der Witterung. [point, closedway]
-# amenity = shelter & name = * {name "${name} ($__SHELTER__)" | "$__SHELTER__"} [0x2b08 resolution 22]
 amenity = shelter {
     name "${name} (${ele}) (${shelter_type})" |
          "${name} (${ele}) ($__SHELTER__)" |
