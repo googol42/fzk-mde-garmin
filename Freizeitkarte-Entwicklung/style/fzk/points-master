@@ -393,6 +393,10 @@
 # TODOs:
 # water_well : anderen Typ? Weil der ist relativ allgemein
 # Springbrunnen rendern?
+# Alle 66.. Typen besser Nutzen (z. B. um Burgen anzuzeigen)
+
+# Freie Typen
+# 0x2f0a
 
 # Schutzhütte, Berghütte. [point, closedway]
 # siehe auch "amenity = shelter"
