@@ -641,7 +641,7 @@ place = isolated_dwelling & name = * {name "${name} ($__ISOLATEDDWELLING__)"} [0
 
 # Ortsbezeichnung ohne Bezug auf Bevölkerung (z.B. "Wiesengrund", "Deutsches Eck"). [point, closedway]
 #-# place = locality & name = * {name "${name} (Ortsbezeichnung)"} [0x6600 resolution 24]
-place = locality {name "${name} (${ele}) ($__LOCALITY__)" | "${name} ($__LOCALITY__)" | "N.N. (${ele}) ($__LOCALITY__)" | "N.N. ($__LOCALITY__)"} [0x6600 resolution 23]
+place = locality {name "${name} (${ele}) ($__LOCALITY__)" | "${name} ($__LOCALITY__)" | "N.N. (${ele}) ($__LOCALITY__)" | "N.N. ($__LOCALITY__)"} [0x6600 resolution 24]
 
 # Stadtteil, Stadtviertel. [point, closedway]
 place = suburb [0x0b00 resolution 21]
