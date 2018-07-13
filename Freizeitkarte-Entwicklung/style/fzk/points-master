@@ -409,10 +409,6 @@ tourism = alpine_hut {name "${name} (${ele})" | "${name}" | "$__ALPINEHUT__ (${e
 # Aquarium.
 tourism = aquarium & name = * {name "${name} ($__AQUARIUM__)"} [0x2c07 resolution 24]
 
-# Sehenswürdigkeit. [point, closedway]
-# (Excluding worship places here, that tag should be stronger than attraction)
-tourism = attraction & name = * & amenity != place_of_worship & natural != waterfall & waterway != waterfall {name "${name} ($__ATTRACTION__)"} [0x6600 resolution 24]
-
 # Kunstwerk, Kunstobjekt. [point, closedway]
 tourism = artwork & name = * {name "${name} ($__ARTWORK__)"} [0x6600 resolution 24]
 
@@ -1745,6 +1741,8 @@ barrier = lift_gate [0x1210 resolution 24]
 # cemetery = grave & name = * & (wikipedia:de = * | wikipedia = * | website ~ 'wikipedia') {name "${name} (Ruhestaette)"} [0x6405 resolution 24]
 cemetery = grave & name = * & (wikipedia:de = * | wikipedia = * | website = *) {name "${name} ($__GRAVE__)"} [0x6405 resolution 24]
 
+# Sehenswürdigkeit. [point, closedway]
+tourism = attraction & name = * {name "${name} ($__ATTRACTION__)"} [0x6600 resolution 24]
 
 # ------------------------------------------------
 # Needed Include Lines for making 
