@@ -400,10 +400,10 @@
 
 # Schutzhütte, Berghütte. [point, closedway]
 # Bewirtschaftete Berghütten
-tourism = alpine_hut & amenity = restaurant {name "${name} (${ele})" | "${name}" | "$__ALPINEHUT__ (${ele})" | "$__ALPINEHUT__"} [0x4803 resolution 23]
+tourism = alpine_hut & amenity = restaurant {name "${name} (${ele})" | "${name}" | "$__ALPINEHUT__ (${ele})" | "$__ALPINEHUT__"} [0x4803 resolution 22]
 
 # Selbstversorger Berghütten
-tourism = alpine_hut {name "${name} (${ele})" | "${name}" | "$__ALPINEHUT__ (${ele})" | "$__ALPINEHUT__"} [0x4804 resolution 23]
+tourism = alpine_hut {name "${name} (${ele})" | "${name}" | "$__ALPINEHUT__ (${ele})" | "$__ALPINEHUT__"} [0x4804 resolution 22]
 
 # Basic hut (Schutzhütte, Berghütte). [point, closedway
 # A basic hut is a building located in the mountains or into the wild intended
@@ -417,7 +417,7 @@ tourism = lean_to | (amenity = shelter & shelter_type = lean_to) {name "${name} 
 
 # A wilderness hut is a building located in the mountains or into the wild intended
 # to provide shelter, heating to hikers and climbers.
-tourism = wilderness_hut {name "${name} (${ele}) ($__WILDERNESSHUT__)" | "${name} ($__WILDERNESSHUT__)" | "$__WILDERNESSHUT__ (${ele})" | "$__WILDERNESSHUT__"} [0x4806 resolution 23]
+tourism = wilderness_hut {name "${name} (${ele}) ($__WILDERNESSHUT__)" | "${name} ($__WILDERNESSHUT__)" | "$__WILDERNESSHUT__ (${ele})" | "$__WILDERNESSHUT__"} [0x4806 resolution 22]
 
 # Bushütte
 amenity = shelter & shelter_type = public_transport {
