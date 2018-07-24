@@ -412,11 +412,11 @@ tourism = aquarium & name = * {name "${name} ($__AQUARIUM__)"} [0x2c07 resolutio
 # Kunstwerk, Kunstobjekt. [point, closedway]
 tourism = artwork & name = * {name "${name} ($__ARTWORK__)"} [0x6600 resolution 24]
 
-# Basic hut (Schutzhütte, Berghütte). [point, closedway]
+# Basic hut (Schutzhütte, Berghütte). [point, closedway
 # A basic hut is a building located in the mountains or into the wild intended
 # to provide basic shelter, sleeping, to hikers and climbers.
 # Basic hut (new tagging) [point, closedway]
-amenity = shelter & shelter_type = basic_hut {name "${name} (${ele}) ($__BASICHUT__)" | "${name} ($__BASICHUT__)" | "$__BASICHUT__ (${ele})" | "$__BASICHUT__"} [0x4805 resolution 22]
+tourism = basic_hut | (amenity = shelter & shelter_type = basic_hut) {name "${name} (${ele}) ($__BASICHUT__)" | "${name} ($__BASICHUT__)" | "$__BASICHUT__ (${ele})" | "$__BASICHUT__"} [0x4805 resolution 22]
 
 # Bed & Breakfast. [point, closedway]
 tourism = bed_and_breakfast & name = * { name "${name} ($__BEDANDBREAKFAST__)" } [0x2b02 resolution 24]
