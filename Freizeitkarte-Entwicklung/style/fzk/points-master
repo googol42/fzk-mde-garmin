@@ -398,26 +398,25 @@
 # Freie Typen
 # 0x2f0a
 
-# Schutzhütte, Berghütte. [point, closedway]
+# Schutzhütte, Berghütte, Unterstand [point, closedway]
 # Bewirtschaftete Berghütten
 tourism = alpine_hut & amenity = restaurant {
-    name "${name} (${ele})" |
-         "${name}" |
+    name "${name} (${ele}) (__ALPINEHUT__)" |
+         "${name} (__ALPINEHUT__)" |
          "$__ALPINEHUT__ (${ele})" |
          "$__ALPINEHUT__"
 } [0x4803 resolution 22]
 
 # Selbstversorger Berghütten
 tourism = alpine_hut {
-    name "${name} (${ele})" |
-         "${name}" |
+    name "${name} (${ele}) (__ALPINEHUT__)" |
+         "${name} (__ALPINEHUT__)" |
          "$__ALPINEHUT__ (${ele})" |
          "$__ALPINEHUT__"
 } [0x4804 resolution 22]
 
 # A basic hut is a building located in the mountains or into the wild intended
 # to provide basic shelter, sleeping, to hikers and climbers.
-# Basic hut (new tagging) [point, closedway]
 tourism = basic_hut | (amenity = shelter & shelter_type = basic_hut) {
     name "${name} (${ele}) ($__BASICHUT__)" |
          "${name} ($__BASICHUT__)" |
@@ -426,7 +425,6 @@ tourism = basic_hut | (amenity = shelter & shelter_type = basic_hut) {
 } [0x4805 resolution 22]
 
 # A lean-to is a building located in the mountains or into the wild intended to provide shelter against rain.
-# Lean-to (Schutzhütte, Berghütte), new Tagging version [point, closedway
 tourism = lean_to | (amenity = shelter & shelter_type = lean_to) {
     name "${name} (${ele}) ($__LEANTO__)" |
          "${name} ($__LEANTO__)" |
@@ -454,7 +452,7 @@ amenity = shelter & shelter_type = public_transport {
          "${shelter_type}" |
          "$__SHELTER__"
 } [0x2b06 resolution 24]
-# Ein Unterstand ist ein überdachter offener Platz als Schutz vor der Witterung. [point, closedway]
+# default shelter
 amenity = shelter {
     name "${name} (${ele}) (${shelter_type})" |
          "${name} (${ele}) ($__SHELTER__)" |
