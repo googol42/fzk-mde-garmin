@@ -401,16 +401,16 @@
 # Schutzhütte, Berghütte, Unterstand [point, closedway]
 # Bewirtschaftete Berghütten
 tourism = alpine_hut & amenity = restaurant {
-    name "${name} (${ele}) (__ALPINEHUT__)" |
-         "${name} (__ALPINEHUT__)" |
+    name "${name} (${ele}) ($__ALPINEHUT__)" |
+         "${name} ($__ALPINEHUT__)" |
          "$__ALPINEHUT__ (${ele})" |
          "$__ALPINEHUT__"
 } [0x4803 resolution 22]
 
 # Selbstversorger Berghütten
 tourism = alpine_hut {
-    name "${name} (${ele}) (__ALPINEHUT__)" |
-         "${name} (__ALPINEHUT__)" |
+    name "${name} (${ele}) ($__ALPINEHUT__)" |
+         "${name} ($__ALPINEHUT__)" |
          "$__ALPINEHUT__ (${ele})" |
          "$__ALPINEHUT__"
 } [0x4804 resolution 22]
