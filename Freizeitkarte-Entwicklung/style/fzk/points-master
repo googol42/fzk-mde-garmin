@@ -188,7 +188,7 @@
 # - Haus und Garten:                     0x2e08
 # - Kaufhaus:                            0x2e01
 # - Lebensmittel:                        0x2e02
-# - Spezialitäteneinzelhandel:           0x2e0a
+# - Spezialitäteneinzelhandel/Fachhandel:0x2e0a
 #
 # Essen & Trinken:
 # - Amerikanisch:                        0x2a01, 0x2a1b
