@@ -415,6 +415,16 @@ tourism = alpine_hut {
          "$__ALPINEHUT__"
 } [0x4804 resolution 22]
 
+(tourism = lean_to | tourism = basic_hut | amenity = shelter) & access = private {
+    name "Privat: ${name} (${ele}) (${shelter_type})" |
+         "Privat: ${name} (${ele}) ($__SHELTER__)" |
+         "Privat: ${name} (${shelter_type})" |
+         "Privat: ${name} ($__SHELTER__)" |
+         "Privat: ${shelter_type} (${ele})" |
+         "Privat: $__SHELTER__ (${ele})" |
+         "Privat: ${shelter_type}" |
+         "Privat: $__SHELTER__"
+} [0x4808 resolution 23]
 # A basic hut is a building located in the mountains or into the wild intended
 # to provide basic shelter, sleeping, to hikers and climbers.
 tourism = basic_hut | (amenity = shelter & shelter_type = basic_hut) {
