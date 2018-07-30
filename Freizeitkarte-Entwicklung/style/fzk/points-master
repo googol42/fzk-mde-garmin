@@ -428,17 +428,25 @@ tourism = alpine_hut {
 # A basic hut is a building located in the mountains or into the wild intended
 # to provide basic shelter, sleeping, to hikers and climbers.
 tourism = basic_hut | (amenity = shelter & shelter_type = basic_hut) {
-    name "${name} (${ele}) ($__BASICHUT__)" |
+    name "${access}: ${name} (${ele}) ($__BASICHUT__)" |
+         "${name} (${ele}) ($__BASICHUT__)" |
+         "${access}: ${name} ($__BASICHUT__)" |
          "${name} ($__BASICHUT__)" |
+         "${access}: $__BASICHUT__ (${ele})" |
          "$__BASICHUT__ (${ele})" |
+         "${access}: $__BASICHUT__" |
          "$__BASICHUT__"
 } [0x4805 resolution 22]
 
 # A lean-to is a building located in the mountains or into the wild intended to provide shelter against rain.
 tourism = lean_to | (amenity = shelter & shelter_type = lean_to) {
-    name "${name} (${ele}) ($__LEANTO__)" |
+    name "${access}: ${name} (${ele}) ($__LEANTO__)" |
+         "${name} (${ele}) ($__LEANTO__)" |
+         "${access}: ${name} ($__LEANTO__)" |
          "${name} ($__LEANTO__)" |
+         "${access}: $__LEANTO__ (${ele})" |
          "$__LEANTO__ (${ele})" |
+         "${access}: $__LEANTO__" |
          "$__LEANTO__"
 } [0x4807 resolution 22]
 
@@ -464,13 +472,21 @@ amenity = shelter & shelter_type = public_transport {
 } [0x2b06 resolution 24]
 # default shelter
 amenity = shelter {
-    name "${name} (${ele}) (${shelter_type})" |
+    name "${access}: ${name} (${ele}) (${shelter_type})" |
+         "${name} (${ele}) (${shelter_type})" |
+         "${access}: ${name} (${ele}) ($__SHELTER__)" |
          "${name} (${ele}) ($__SHELTER__)" |
+         "${access}: ${name} (${shelter_type})" |
          "${name} (${shelter_type})" |
+         "${access}: ${name} ($__SHELTER__)" |
          "${name} ($__SHELTER__)" |
+         "${access}: ${shelter_type} (${ele})" |
          "${shelter_type} (${ele})" |
+         "${access}: $__SHELTER__ (${ele})" |
          "$__SHELTER__ (${ele})" |
+         "${access}: ${shelter_type}" |
          "${shelter_type}" |
+         "${access}: $__SHELTER__" |
          "$__SHELTER__"
 } [0x2b06 resolution 22]
 
