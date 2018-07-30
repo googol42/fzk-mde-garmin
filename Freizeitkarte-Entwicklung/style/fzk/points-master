@@ -1198,7 +1198,7 @@ shop = cosmetics & name = * {name "${name} ($__COSMETICS__)"} [0x2f10 resolution
 shop = bicycle & name = * {name "${name} ($__BICYCLESHOP__)"} [0x2f13 resolution 24]
 
 # Metzgerei, Fleischerei, Schlachterei. [point, closedway]
-shop = butcher & name = * {name "${name} ($__BUTCHER__)"} [0x2e02 resolution 24]
+shop = butcher & name = * {name "${name} ($__BUTCHER__)"} [0x2e0d resolution 24]
 
 # Autohaus. [point, closedway]
 shop = car & name = * {name "${name} ($__CARSHOP__)"} [0x2f07 resolution 24]
@@ -1221,7 +1221,7 @@ shop = computer & name = * {name "${name} ($__COMPUTER__)"} [0x2e0b resolution 2
 shop = confectionery & name = * {name "${name} ($__CONFECTIONERY__)"} [0x2e0a resolution 24]
 
 # Nachbarschaftsladen, Lebensmittelgeschäft, Tante-Emma-Laden. [point, closedway]
-shop = convenience & name = * {name "${name} ($__CONVENIENCE__)"} [0x2e02 resolution 24]
+shop = convenience & name = * {name "${name} ($__CONVENIENCE__)"} [0x2e0d resolution 24]
 
 # Feinkostladen. [point, closedway]
 shop = deli & name = * {name "${name} ($__DELICACY__)"} [0x2a05 resolution 24]
@@ -1254,7 +1254,7 @@ shop = ice_cream & name = * {name "${name} ($__ICECREAMSHOP__)"} [0x2a0e resolut
 shop = mall & name = * {name "${name} ($__MALL__)"} [0x2e04 resolution 24]
 
 # Bio-Laden, Reformhaus. [point, closedway]
-shop = organic & name = * {name "${name} ($__ORGANICSHOP__)"} [0x2e02 resolution 24]
+shop = organic & name = * {name "${name} ($__ORGANICSHOP__)"} [0x2e0d resolution 24]
 
 # Schuhfachgeschäft. [point, closedway]
 shop = shoes & name = * {name "${name} ($__SHOES__)"} [0x2e07 resolution 24]
