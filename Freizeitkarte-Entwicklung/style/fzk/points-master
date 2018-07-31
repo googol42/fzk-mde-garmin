@@ -392,7 +392,6 @@
 
 # TODOs:
 # water_well : anderen Typ? Weil der ist relativ allgemein
-# Springbrunnen rendern?
 # Alle 66.. Typen besser Nutzen (z. B. um Burgen anzuzeigen)
 
 # Freie Typen
@@ -1016,11 +1015,11 @@ amenity = drinking_water & drinking_water:legal = no  {name "(ln) ${name} ($__DR
 amenity = drinking_water & drinking_water = no        {name "(n) ${name} ($__DRINKINGWATER__)" | "(n) $__DRINKINGWATER__"} [0x6414 resolution 22]
 amenity = drinking_water                              {name "${name} ($__DRINKINGWATER__)" | "$__DRINKINGWATER__"} [0x6414 resolution 22]
 
-# amenity = fountain & drinking_water:legal = yes {name "(ly) ${name} (Springbrunnen)" | "(ly) Springbrunnen"} [0x6414 resolution 22]
-# amenity = fountain & drinking_water = yes       {name "(y) ${name} (Springbrunnen)" | "(y) Springbrunnen"} [0x6414 resolution 22]
-# amenity = fountain & drinking_water:legal = no  {name "(ln) ${name} (Springbrunnen)" | "(ln) Springbrunnen"} [0x6414 resolution 22]
-# amenity = fountain & drinking_water = no        {name "(n) ${name} (Springbrunnen)" | "(n) Springbrunnen"} [0x6414 resolution 22]
-# amenity = fountain                              {name "${name} (Springbrunnen)" | "Springbrunnen"} [0x6414 resolution 22]
+amenity = fountain & drinking_water:legal = yes {name "(ly) ${name} (Springbrunnen)" | "(ly) Springbrunnen"} [0x6415 resolution 24]
+amenity = fountain & drinking_water = yes       {name "(y) ${name} (Springbrunnen)" | "(y) Springbrunnen"} [0x6415 resolution 24]
+amenity = fountain & drinking_water:legal = no  {name "(ln) ${name} (Springbrunnen)" | "(ln) Springbrunnen"} [0x6415 resolution 24]
+amenity = fountain & drinking_water = no        {name "(n) ${name} (Springbrunnen)" | "(n) Springbrunnen"} [0x6415 resolution 24]
+amenity = fountain                              {name "${name} (Springbrunnen)" | "Springbrunnen"} [0x6415 resolution 24]
 
 # Botschaft, Botschaftsgebäude. [point, closedway]
 amenity = embassy & name = * {name "${name} ($__EMBASSY__)"} [0x3003 resolution 24]
