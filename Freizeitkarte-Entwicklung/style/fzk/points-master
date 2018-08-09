@@ -18,7 +18,7 @@
 # Version : 0.10- 28.10.2012: Darstellung von Trinkwasserstellen
 # Version : 0.11- 07.12.2012: Darstellung von Radrennbahnen korrigiert
 # Version : 0.12 -04.09.2013: Adding Logic and symbol for 'smaller' mobile communication tower
-# Version : 0.13 -07.01.2014: Adapted stuff for tourism=information: 
+# Version : 0.13 -07.01.2014: Adapted stuff for tourism=information:
 #                             - Added special sign for tourist office
 #                             - lightened normal info sign
 # Version : 0.14 -14.03.2014: Adapting things regarding power = * (station / plant / substation / sub_station)
@@ -376,7 +376,7 @@
 #undef PP_VARS_ACTIVE_IN_STRINGS
 
 # -------------------------------------------------
-# Adress- / Indexsuche: 
+# Adress- / Indexsuche:
 # -------------------------------------------------
 # (handled at the end of the file with mkgmap style include)
 # #include "indexsearch"
@@ -669,7 +669,7 @@ place = city [0x0200 resolution 14]
 # Weiler, Bauernschaft, Einöde (Ansammlung einiger Häuser). [point, closedway]
 place = hamlet [0x0d00 resolution 24]
 
-# Special treatment for Russia where place=allotments is heavily used... 
+# Special treatment for Russia where place=allotments is heavily used...
 # Same treatment like above place=hamlet
 place = allotments [0x0d00 resolution 24]
 
@@ -1783,7 +1783,7 @@ cemetery = grave & name = * & (wikipedia:de = * | wikipedia = * | website = *) {
 tourism = attraction & name = * {name "${name} ($__ATTRACTION__)"} [0x6600 resolution 24]
 
 # ------------------------------------------------
-# Needed Include Lines for making 
+# Needed Include Lines for making
 # old mkgmap styles (pre r2906)
 # fully compatible with mkgmap r2906 and higher
 # ------------------------------------------------
