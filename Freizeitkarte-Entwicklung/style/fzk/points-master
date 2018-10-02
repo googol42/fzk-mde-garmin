@@ -427,7 +427,7 @@ tourism = basic_hut {set amenity = shelter; set shelter_type = basic_hut; delete
 
 amenity = shelter { set readable_access = '${access|subst:"forestry=>Forst.: "|subst:"no=>Privat: "|subst:"private=>Privat: "|subst:"yes=>Öff.: "|subst:"public=>Öff.: "|def:""}'}
 
-amenity = shelter & access = private {
+amenity = shelter & (access = private | access = no) {
     name "${readable_access}${name} (${ele}) (${shelter_type})" |
          "${readable_access}${name} (${ele}) ($__SHELTER__)" |
          "${readable_access}${name} (${shelter_type})" |
