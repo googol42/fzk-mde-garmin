@@ -425,39 +425,33 @@ tourism = alpine_hut {
 tourism = lean_to   {set amenity = shelter; set shelter_type = lean_to; delete tourism}
 tourism = basic_hut {set amenity = shelter; set shelter_type = basic_hut; delete tourism}
 
+amenity = shelter { set readable_access = '${access|subst:"forestry=>Forst.: "|subst:"no=>Privat: "|subst:"private=>Privat: "|subst:"yes=>Öff.: "|subst:"public=>Öff.: "|def:""}'}
+
 amenity = shelter & access = private {
-    name "Privat: ${name} (${ele}) (${shelter_type})" |
-         "Privat: ${name} (${ele}) ($__SHELTER__)" |
-         "Privat: ${name} (${shelter_type})" |
-         "Privat: ${name} ($__SHELTER__)" |
-         "Privat: ${shelter_type} (${ele})" |
-         "Privat: $__SHELTER__ (${ele})" |
-         "Privat: ${shelter_type}" |
-         "Privat: $__SHELTER__"
+    name "${readable_access}${name} (${ele}) (${shelter_type})" |
+         "${readable_access}${name} (${ele}) ($__SHELTER__)" |
+         "${readable_access}${name} (${shelter_type})" |
+         "${readable_access}${name} ($__SHELTER__)" |
+         "${readable_access}${shelter_type} (${ele})" |
+         "${readable_access}$__SHELTER__ (${ele})" |
+         "${readable_access}${shelter_type}" |
+         "${readable_access}$__SHELTER__"
 } [0x4808 resolution 23]
 # A basic hut is a building located in the mountains or into the wild intended
 # to provide basic shelter, sleeping, to hikers and climbers.
 amenity = shelter & shelter_type = basic_hut {
-    name "${access}: ${name} (${ele}) ($__BASICHUT__)" |
-         "${name} (${ele}) ($__BASICHUT__)" |
-         "${access}: ${name} ($__BASICHUT__)" |
-         "${name} ($__BASICHUT__)" |
-         "${access}: $__BASICHUT__ (${ele})" |
-         "$__BASICHUT__ (${ele})" |
-         "${access}: $__BASICHUT__" |
-         "$__BASICHUT__"
+    name "${readable_access}${name} (${ele}) ($__BASICHUT__)" |
+         "${readable_access}${name} ($__BASICHUT__)" |
+         "${readable_access}$__BASICHUT__ (${ele})" |
+         "${readable_access}$__BASICHUT__"
 } [0x4805 resolution 22]
 
 # A lean-to is a building located in the mountains or into the wild intended to provide shelter against rain.
 amenity = shelter & shelter_type = lean_to {
-    name "${access}: ${name} (${ele}) ($__LEANTO__)" |
-         "${name} (${ele}) ($__LEANTO__)" |
-         "${access}: ${name} ($__LEANTO__)" |
-         "${name} ($__LEANTO__)" |
-         "${access}: $__LEANTO__ (${ele})" |
-         "$__LEANTO__ (${ele})" |
-         "${access}: $__LEANTO__" |
-         "$__LEANTO__"
+    name "${readable_access}${name} (${ele}) ($__LEANTO__)" |
+         "${readable_access}${name} ($__LEANTO__)" |
+         "${readable_access}$__LEANTO__ (${ele})" |
+         "${readable_access}$__LEANTO__"
 } [0x4807 resolution 22]
 
 # A wilderness hut is a building located in the mountains or into the wild intended
@@ -471,33 +465,17 @@ tourism = wilderness_hut {
 
 # Bushütte
 amenity = shelter & shelter_type = public_transport {
-    name "${name} (${ele}) (${shelter_type})" |
-         "${name} (${ele}) ($__SHELTER__)" |
-         "${name} (${shelter_type})" |
-         "${name} ($__SHELTER__)" |
-         "${shelter_type} (${ele})" |
-         "$__SHELTER__ (${ele})" |
-         "${shelter_type}" |
-         "$__SHELTER__"
-} [0x2b06 resolution 24]
+    name "${name} (${ele}) (Bushütte)" | "${name} (Bushütte)" | "Bushütte (${ele})" | "Bushütte" } [0x2b06 resolution 24]
 # default shelter
 amenity = shelter {
-    name "${access}: ${name} (${ele}) (${shelter_type})" |
-         "${name} (${ele}) (${shelter_type})" |
-         "${access}: ${name} (${ele}) ($__SHELTER__)" |
-         "${name} (${ele}) ($__SHELTER__)" |
-         "${access}: ${name} (${shelter_type})" |
-         "${name} (${shelter_type})" |
-         "${access}: ${name} ($__SHELTER__)" |
-         "${name} ($__SHELTER__)" |
-         "${access}: ${shelter_type} (${ele})" |
-         "${shelter_type} (${ele})" |
-         "${access}: $__SHELTER__ (${ele})" |
-         "$__SHELTER__ (${ele})" |
-         "${access}: ${shelter_type}" |
-         "${shelter_type}" |
-         "${access}: $__SHELTER__" |
-         "$__SHELTER__"
+    name "${readable_access}${name} (${ele}) (${shelter_type})" |
+         "${readable_access}${name} (${ele}) ($__SHELTER__)" |
+         "${readable_access}${name} (${shelter_type})" |
+         "${readable_access}${name} ($__SHELTER__)" |
+         "${readable_access}${shelter_type} (${ele})" |
+         "${readable_access}$__SHELTER__ (${ele})" |
+         "${readable_access}${shelter_type}" |
+         "${readable_access}$__SHELTER__"
 } [0x2b06 resolution 22]
 
 # Bed & Breakfast. [point, closedway]
