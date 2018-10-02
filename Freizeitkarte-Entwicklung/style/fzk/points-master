@@ -415,10 +415,10 @@ tourism = alpine_hut & amenity = restaurant {
 
 # Selbstversorger Berghütten
 tourism = alpine_hut {
-    name "${name} (${ele}) ($__ALPINEHUT__)" |
-         "${name} ($__ALPINEHUT__)" |
-         "$__ALPINEHUT__ (${ele})" |
-         "$__ALPINEHUT__"
+    name "${name} (${ele}) ($__SELF_ALPINEHUT__)" |
+         "${name} ($__SELF_ALPINEHUT__)" |
+         "$__SELF_ALPINEHUT__ (${ele})" |
+         "$__SELF_ALPINEHUT__"
 } [0x4804 resolution 22]
 
 # Korrekturen
