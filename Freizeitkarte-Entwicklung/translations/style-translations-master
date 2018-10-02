@@ -69,12 +69,6 @@
 #define $__ALPINEHUT__RU Горное жилище
 #define $__ALPINEHUT__PT Cabana alpina
 
-## Berghütte. [point, closedway]
-## Unbewirtschaftete Berghütten
-#define $__SELF_ALPINEHUT__ Unbewirtschaftete Hütte
-#define $__SELF_ALPINEHUT__DE Unbewirtschaftete Hütte
-#define $__SELF_ALPINEHUT__EN self-service hut
-
 ## Aquarium.
 #define $__AQUARIUM__ Aquarium
 #define $__AQUARIUM__DE Aquarium
