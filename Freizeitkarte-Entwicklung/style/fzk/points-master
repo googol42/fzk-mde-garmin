@@ -188,7 +188,14 @@
 # - Haus und Garten:                     0x2e08
 # - Kaufhaus:                            0x2e01
 # - Lebensmittel:                        0x2e02
-# - Spezialitäteneinzelhandel/Fachhandel:0x2e0a
+#TODO: schauen wie Spezialitäteneinzelhandel auf dem GPS heißt
+# - Spezialitäteneinzelhandel/Fachhandel:0x2e0a, 0x20c
+# - Florist:                             0x2e0f
+# - Gift/Antique/Art:                    0x2e10
+# - Book Store:                          0x2e14
+# - Sporing Goods:                       0x2e12
+# - Wine & Liquor:
+# - Andere:
 #
 # Essen & Trinken:
 # - Amerikanisch:                        0x2a01, 0x2a1b
