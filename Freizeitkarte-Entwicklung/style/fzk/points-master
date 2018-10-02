@@ -421,7 +421,11 @@ tourism = alpine_hut {
          "$__ALPINEHUT__"
 } [0x4804 resolution 22]
 
-(tourism = lean_to | tourism = basic_hut | amenity = shelter) & access = private {
+# Korrekturen
+tourism = lean_to   {set amenity = shelter; set shelter_type = lean_to; delete tourism}
+tourism = basic_hut {set amenity = shelter; set shelter_type = basic_hut; delete tourism}
+
+amenity = shelter & access = private {
     name "Privat: ${name} (${ele}) (${shelter_type})" |
          "Privat: ${name} (${ele}) ($__SHELTER__)" |
          "Privat: ${name} (${shelter_type})" |
@@ -433,7 +437,7 @@ tourism = alpine_hut {
 } [0x4808 resolution 23]
 # A basic hut is a building located in the mountains or into the wild intended
 # to provide basic shelter, sleeping, to hikers and climbers.
-tourism = basic_hut | (amenity = shelter & shelter_type = basic_hut) {
+amenity = shelter & shelter_type = basic_hut {
     name "${access}: ${name} (${ele}) ($__BASICHUT__)" |
          "${name} (${ele}) ($__BASICHUT__)" |
          "${access}: ${name} ($__BASICHUT__)" |
@@ -445,7 +449,7 @@ tourism = basic_hut | (amenity = shelter & shelter_type = basic_hut) {
 } [0x4805 resolution 22]
 
 # A lean-to is a building located in the mountains or into the wild intended to provide shelter against rain.
-tourism = lean_to | (amenity = shelter & shelter_type = lean_to) {
+amenity = shelter & shelter_type = lean_to {
     name "${access}: ${name} (${ele}) ($__LEANTO__)" |
          "${name} (${ele}) ($__LEANTO__)" |
          "${access}: ${name} ($__LEANTO__)" |
