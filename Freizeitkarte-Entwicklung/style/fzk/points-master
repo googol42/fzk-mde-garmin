@@ -467,15 +467,16 @@ tourism = wilderness_hut {
 amenity = shelter & shelter_type = public_transport {
     name "${name} (${ele}) (Bushütte)" | "${name} (Bushütte)" | "Bushütte (${ele})" | "Bushütte" } [0x2b06 resolution 24]
 # default shelter
+
+amenity = shelter & shelter_type = * {
+    set readable_type = '${shelter_type|subst:"picnic_shelter=>Picnicunterstand"|subst:"weather_shelter=>Wetterschutz"|def:$__SHELTER__}'
+}
+
 amenity = shelter {
-    name "${readable_access}${name} (${ele}) (${shelter_type})" |
-         "${readable_access}${name} (${ele}) ($__SHELTER__)" |
-         "${readable_access}${name} (${shelter_type})" |
-         "${readable_access}${name} ($__SHELTER__)" |
-         "${readable_access}${shelter_type} (${ele})" |
-         "${readable_access}$__SHELTER__ (${ele})" |
-         "${readable_access}${shelter_type}" |
-         "${readable_access}$__SHELTER__"
+    name "${readable_access}${name} (${ele}) (${readable_type})" |
+         "${readable_access}${name} (${readable_type})" |
+         "${readable_access}${readable_type} (${ele})" |
+         "${readable_access}${readable_type}"
 } [0x2b06 resolution 22]
 
 # Bed & Breakfast. [point, closedway]
