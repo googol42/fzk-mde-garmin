@@ -469,7 +469,7 @@ amenity = shelter & shelter_type = public_transport {
 # default shelter
 
 amenity = shelter & shelter_type = * {
-    set readable_type = '${shelter_type|subst:"picnic_shelter=>Picnicunterstand"|subst:"weather_shelter=>Wetterschutz"|def:$__SHELTER__}'
+    set readable_type = '${shelter_type|subst:"picnic_shelter=>Picnicunterstand"|subst:"weather_shelter=>Wetterschutz"|def:"$__SHELTER__"}'
 }
 
 amenity = shelter {
