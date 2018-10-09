@@ -514,9 +514,6 @@ tourism = motel & name = * { name "${stars}* ${name} ($__MOTEL__)" | "${name} ($
 tourism = museum & name = * {name "${name} ($__MUSEUM__)"} [0x2c02 resolution 24]
 
 # Hunting Stand - abusing 'Garmin Dealer' type
-#ifdef EXPLORE
-amenity = hunting_stand {name "${name} (Jägerstand)"} [0x2F0F resolution 24 default_name 'Jägerstand']
-#endif
 amenity = hunting_stand {name "${name} (Jägerstand)"} [0x2F0F resolution 23 default_name 'Jägerstand']
 
 # Freizeitpark, Themenpark. [point, closedway]
