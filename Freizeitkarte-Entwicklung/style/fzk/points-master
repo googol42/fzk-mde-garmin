@@ -1141,6 +1141,10 @@ man_made = works & name = * {name "${name} ($__INDUSTRIALPLANT__)"} [0x6605 reso
 
 # Haltepunkt (kein Bahnhof, z. T. ohne Bahnsteig, nur bei Bedarf). [point]
 # Ggf. eigenes Symbol - hier zunächst wie Bahnhof.
+#ifdef EXPLORE
+railway = halt                                  {name "${name} ($__RAILWAYHALT__)" | "$__RAILWAYHALT__"} [0x2f17 resolution 23]
+public_transport = stop_position & train = yes  {name "${name} ($__RAILWAYHALT__)" | "$__RAILWAYHALT__"} [0x2f17 resolution 23]
+#endif
 railway = halt                                  {name "${name} ($__RAILWAYHALT__)" | "$__RAILWAYHALT__"} [0x2f17 resolution 24]
 public_transport = stop_position & train = yes  {name "${name} ($__RAILWAYHALT__)" | "$__RAILWAYHALT__"} [0x2f17 resolution 24]
 
@@ -1151,6 +1155,9 @@ public_transport = stop_position & train = yes  {name "${name} ($__RAILWAYHALT__
 # public_transport = platform (wird derzeit nicht unterstützt)
 
 # Bahnhof (mit mindestens einer Weiche). [point, closedway]
+#ifdef EXPLORE
+railway = station {name "${name} ($__RAILWAYSTATION__)" | "$__RAILWAYSTATION__"} [0x2f17 resolution 22]
+#endif
 railway = station {name "${name} ($__RAILWAYSTATION__)" | "$__RAILWAYSTATION__"} [0x2f17 resolution 23]
 
 # U-Bahn Eingang. [point]
