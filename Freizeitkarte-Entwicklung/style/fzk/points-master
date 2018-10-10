@@ -406,20 +406,12 @@
 
 # Schutzhütte, Berghütte, Unterstand [point, closedway]
 # Bewirtschaftete Berghütten
-tourism = alpine_hut & amenity = restaurant {
-    name "${name} (${ele}) ($__ALPINEHUT__)" |
-         "${name} ($__ALPINEHUT__)" |
-         "$__ALPINEHUT__ (${ele})" |
-         "$__ALPINEHUT__"
-} [0x4803 resolution 22]
-
-# Selbstversorger Berghütten
 tourism = alpine_hut {
     name "${name} (${ele}) ($__ALPINEHUT__)" |
          "${name} ($__ALPINEHUT__)" |
          "$__ALPINEHUT__ (${ele})" |
          "$__ALPINEHUT__"
-} [0x4804 resolution 22]
+} [0x4803 resolution 22]
 
 # Korrekturen
 tourism = lean_to   {set amenity = shelter; set shelter_type = lean_to; delete tourism}
@@ -461,7 +453,7 @@ tourism = wilderness_hut {
          "${name} ($__WILDERNESSHUT__)" |
          "$__WILDERNESSHUT__ (${ele})" |
          "$__WILDERNESSHUT__"
-} [0x4806 resolution 22]
+} [0x4804 resolution 22]
 
 # Bushütte
 amenity = shelter & shelter_type = public_transport {
