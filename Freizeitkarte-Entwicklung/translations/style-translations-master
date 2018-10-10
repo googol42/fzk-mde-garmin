@@ -252,15 +252,9 @@
 ## Wilderness hut (Schutzhütte, Berghütte). [point, closedway]
 ## A wilderness hut is a building located in the mountains or into the wild intended
 ## to provide shelter, heating to hikers and climbers.
-#define $__WILDERNESSHUT__ Wilderness Hut
-#define $__WILDERNESSHUT__DE Wilderness Hut
-#define $__WILDERNESSHUT__EN Wilderness Hut
-#define $__WILDERNESSHUT__FR Refuge
-#define $__WILDERNESSHUT__IT Bivacco
-#define $__WILDERNESSHUT__NL Schuilhut
-#define $__WILDERNESSHUT__PL Szałas w lesie
-#define $__WILDERNESSHUT__RU Изба
-#define $__WILDERNESSHUT__PT Abrigo
+#define $__WILDERNESSHUT__ Selbstversorgerhütte
+#define $__WILDERNESSHUT__DE Selbstversorgerhütte
+#define $__WILDERNESSHUT__EN self supporter hut
 
 ## Zoologischer Garten (Zoo), Tierpark. [point, closedway]
 ## Points
