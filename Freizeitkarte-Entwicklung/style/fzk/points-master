@@ -908,8 +908,8 @@ amenity = university & name = * {name "${name} ($__UNIVERSITY__)"} [0x2c05 resol
 amenity = bicycle_rental {name "${name} ($__BICYCLERENTAL__)" | "$__BICYCLERENTAL__"} [0x2f13 resolution 24]
 
 # Busbahnhof (große Haltestelle). [point, closedway] (s.a. highway = bus_stop)
-amenity = bus_station                         {name "${name} ($__BUSSTATION__)" | "$__BUSSTATION__"} [0x2f08 resolution 24]
-public_transport = stop_position & bus = yes  {name "${name} ($__BUSSTOP__)" | "$__BUSSTOP__"} [0x2f08 resolution 24]
+amenity = bus_station                         {name "${name} ($__BUSSTATION__)" | "$__BUSSTATION__"} [0x2f08 resolution 23]
+public_transport = stop_position & bus = yes  {name "${name} ($__BUSSTOP__)" | "$__BUSSTOP__"} [0x2f08 resolution 23]
 
 # Automobil-Club. [point, closedway]
 amenity = car_club & name = * {name "${name} ($__CARCLUB__)"} [0x2f0d resolution 24]
@@ -1135,12 +1135,8 @@ man_made = works & name = * {name "${name} ($__INDUSTRIALPLANT__)"} [0x6605 reso
 
 # Haltepunkt (kein Bahnhof, z. T. ohne Bahnsteig, nur bei Bedarf). [point]
 # Ggf. eigenes Symbol - hier zunächst wie Bahnhof.
-#ifdef EXPLORE
-railway = halt                                  {name "${name} ($__RAILWAYHALT__)" | "$__RAILWAYHALT__"} [0x2f17 resolution 23]
-public_transport = stop_position & train = yes  {name "${name} ($__RAILWAYHALT__)" | "$__RAILWAYHALT__"} [0x2f17 resolution 23]
-#endif
-railway = halt                                  {name "${name} ($__RAILWAYHALT__)" | "$__RAILWAYHALT__"} [0x2f17 resolution 24]
-public_transport = stop_position & train = yes  {name "${name} ($__RAILWAYHALT__)" | "$__RAILWAYHALT__"} [0x2f17 resolution 24]
+railway = halt                                  {name "${name} ($__RAILWAYHALT__)" | "$__RAILWAYHALT__"} [0x2f17 resolution 22]
+public_transport = stop_position & train = yes  {name "${name} ($__RAILWAYHALT__)" | "$__RAILWAYHALT__"} [0x2f17 resolution 22]
 
 # Bahnübergang – Straße kreuzt mit Bahnschiene. [point]
 # railway = level_crossing (wird derzeit nicht unterstützt)
@@ -1149,17 +1145,14 @@ public_transport = stop_position & train = yes  {name "${name} ($__RAILWAYHALT__
 # public_transport = platform (wird derzeit nicht unterstützt)
 
 # Bahnhof (mit mindestens einer Weiche). [point, closedway]
-#ifdef EXPLORE
-railway = station {name "${name} ($__RAILWAYSTATION__)" | "$__RAILWAYSTATION__"} [0x2f17 resolution 22]
-#endif
-railway = station {name "${name} ($__RAILWAYSTATION__)" | "$__RAILWAYSTATION__"} [0x2f17 resolution 23]
+railway = station {name "${name} ($__RAILWAYSTATION__)" | "$__RAILWAYSTATION__"} [0x2f17 resolution 21]
 
 # U-Bahn Eingang. [point]
 railway = subway_entrance {name "${name} ($__SUBWAYENTRANCE__)" | "$__SUBWAYENTRANCE__"} [0x2f1f resolution 24]
 
 # Straßenbahnhaltestelle: Ein Ort an dem Pasagiere in Straßenbahnen ein- oder aussteigen können. [point]
-railway = tram_stop                            {name "${name} ($__TRAMSTOP__)" | "$__TRAMSTOP__"} [0x2f08 resolution 24]
-public_transport = stop_position & tram = yes  {name "${name} ($__TRAMSTOP__)" | "$__TRAMSTOP__"} [0x2f08 resolution 24]
+railway = tram_stop                            {name "${name} ($__TRAMSTOP__)" | "$__TRAMSTOP__"} [0x2f08 resolution 23]
+public_transport = stop_position & tram = yes  {name "${name} ($__TRAMSTOP__)" | "$__TRAMSTOP__"} [0x2f08 resolution 23]
 
 # Eine Drehscheibe zum Wenden von Schienenfahrzeugen; findet sich häufig in älteren Bahnbetriebswerken. [point]
 # railway = turntable (wird derzeit nicht unterstützt)
@@ -1326,7 +1319,7 @@ shop = * & name = * {name "${name} (${shop})"} [0x2e0a resolution 24]
 # --------------------------------------------
 
 # Bushaltestelle. [point] (s.a. amenity = bus_station)
-highway = bus_stop {name "${name} ($__BUSSTOP__)" | "$__BUSSTOP__"} [0x2f08 resolution 24]
+highway = bus_stop {name "${name} ($__BUSSTOP__)" | "$__BUSSTOP__"} [0x2f09 resolution 23]
 
 # Fußgängerüberweg (Zebrastreifen, Fußgängerfurt). [point]
 # highway = crossing (wird derzeit nicht unterstützt)
