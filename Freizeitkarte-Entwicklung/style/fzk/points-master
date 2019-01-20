@@ -459,7 +459,7 @@ tourism = wilderness_hut {
 amenity = shelter & shelter_type = public_transport {
     name "${name} (${ele}) (Bushütte)" | "${name} (Bushütte)" | "Bushütte (${ele})" | "Bushütte" } [0x4810 resolution 24]
 
-amenity = shelter & shelter_type = * {
+amenity = shelter {
     set readable_type = '${shelter_type|subst:"picnic_shelter=>Picnicunterstand"|subst:"weather_shelter=>Wetterschutz"|def:"$__SHELTER__"}'
 }
 
