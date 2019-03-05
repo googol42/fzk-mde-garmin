@@ -390,6 +390,12 @@
 # #include "indexsearch"
 
 
+# TODOs:
+# water_well : anderen Typ? Weil der ist relativ allgemein
+# Alle 66.. Typen besser Nutzen (z. B. um Burgen anzuzeigen)
+
+# Freie Typen
+# 0x2f0a
 
 # ------------------------------------------------------------
 # Tourismus / tourism:
@@ -398,12 +404,14 @@
 # - deshalb erfolgt hier die Verarbeitung vor "amenity"
 # ------------------------------------------------------------
 
-# TODOs:
-# water_well : anderen Typ? Weil der ist relativ allgemein
-# Alle 66.. Typen besser Nutzen (z. B. um Burgen anzuzeigen)
-
-# Freie Typen
-# 0x2f0a
+# Schutzhütte, Berghütte. [point, closedway]
+# siehe auch "amenity = shelter"
+# tag tourism=alpine_hut always with human presence: https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dalpine_hut
+# Bewirtschaftete Berghütten
+tourism = alpine_hut & name = * & ele = * {name "${name} (${ele})"}   [0x4803 resolution 22]
+tourism = alpine_hut & name = *           {name "${name}"}            [0x4803 resolution 22]
+tourism = alpine_hut & ele = *            {name "$__ALPINEHUT__ (${ele})"} [0x4803 resolution 22]
+tourism = alpine_hut                      {name "$__ALPINEHUT__"}          [0x4803 resolution 22]
 
 # Korrekturen
 tourism = lean_to   {set amenity = shelter; set shelter_type = lean_to; delete tourism}
@@ -438,14 +446,6 @@ amenity = shelter & shelter_type = lean_to {
          "${readable_access}$__LEANTO__"
 } [0x4807 resolution 22]
 
-# Schutzhütte, Berghütte. [point, closedway]
-# siehe auch "amenity = shelter"
-# tag tourism=alpine_hut always with human presence: https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dalpine_hut
-# Bewirtschaftete Berghütten
-tourism = alpine_hut & name = * & ele = * {name "${name} (${ele})"}   [0x4803 resolution 22]
-tourism = alpine_hut & name = *           {name "${name}"}            [0x4803 resolution 22]
-tourism = alpine_hut & ele = *            {name "$__ALPINEHUT__ (${ele})"} [0x4803 resolution 22]
-tourism = alpine_hut                      {name "$__ALPINEHUT__"}          [0x4803 resolution 22]
 
 # A wilderness hut is a building located in the mountains or into the wild intended
 # to provide shelter, heating to hikers and climbers.
@@ -471,7 +471,6 @@ amenity = shelter {
          "${readable_access}${readable_type} (${ele})" |
          "${readable_access}${readable_type}"
 } [0x4809 resolution 22]
-
 
 # Bed & Breakfast. [point, closedway]
 # deprecated: tourism = bed_and_breakfast  https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dguest_house
