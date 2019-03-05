@@ -390,12 +390,6 @@
 # #include "indexsearch"
 
 
-# TODOs:
-# water_well : anderen Typ? Weil der ist relativ allgemein
-# Alle 66.. Typen besser Nutzen (z. B. um Burgen anzuzeigen)
-
-# Freie Typen
-# 0x2f0a
 
 # ------------------------------------------------------------
 # Tourismus / tourism:
