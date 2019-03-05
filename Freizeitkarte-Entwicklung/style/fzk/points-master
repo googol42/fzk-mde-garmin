@@ -29,6 +29,14 @@
 # Version : 0.18 -02.05.2015: Changes regarding amenity = place_of_worship and buildings
 # Version : 0.19 -19.06.2015: Proper handling place_of_worship without names (to show name and symbol too)
 # Version : 0.20 -16.03.2016: Remapped Camping from 0x2B03 to 0x2B05 due to categorization problems with GPSMap 64s
+# Version : 0.21 -03.06.2018: disabling DRINGKINGWATER and implementing NODRINKINGWATER:
+#                             display drinkingwater places per default, except NODRINKINGWATER set
+# Version : 0.22 -02.03.2019: - Adapted deprecated tagging for guest_house
+#                             - Adapted deprecated tagging amenity=public_building
+#                             - Adapted tourism=alpine_hut
+#                             - Adapted handling of special shops
+#                             - moved tourism=attraction as a general rule to the very end
+#
 #
 # Copyright (C) 2011, 2012 Klaus Tockloth <freizeitkarte@googlemail.com>
 #
@@ -404,15 +412,6 @@
 # Freie Typen
 # 0x2f0a
 
-# Schutzhütte, Berghütte, Unterstand [point, closedway]
-# Bewirtschaftete Berghütten
-tourism = alpine_hut {
-    name "${name} (${ele}) ($__ALPINEHUT__)" |
-         "${name} ($__ALPINEHUT__)" |
-         "$__ALPINEHUT__ (${ele})" |
-         "$__ALPINEHUT__"
-} [0x4803 resolution 22]
-
 # Korrekturen
 tourism = lean_to   {set amenity = shelter; set shelter_type = lean_to; delete tourism}
 tourism = basic_hut {set amenity = shelter; set shelter_type = basic_hut; delete tourism}
@@ -446,6 +445,15 @@ amenity = shelter & shelter_type = lean_to {
          "${readable_access}$__LEANTO__"
 } [0x4807 resolution 22]
 
+# Schutzhütte, Berghütte. [point, closedway]
+# siehe auch "amenity = shelter"
+# tag tourism=alpine_hut always with human presence: https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dalpine_hut
+# Bewirtschaftete Berghütten
+tourism = alpine_hut & name = * & ele = * {name "${name} (${ele})"}   [0x4803 resolution 22]
+tourism = alpine_hut & name = *           {name "${name}"}            [0x4803 resolution 22]
+tourism = alpine_hut & ele = *            {name "$__ALPINEHUT__ (${ele})"} [0x4803 resolution 22]
+tourism = alpine_hut                      {name "$__ALPINEHUT__"}          [0x4803 resolution 22]
+
 # A wilderness hut is a building located in the mountains or into the wild intended
 # to provide shelter, heating to hikers and climbers.
 tourism = wilderness_hut {
@@ -472,14 +480,11 @@ amenity = shelter {
 } [0x4809 resolution 22]
 
 
-# Korrekturen
-tourism = bed_and_breakfast        {set tourism = guest_house; set guest_house = bed_and_breakfast; }
-
 # Bed & Breakfast. [point, closedway]
-tourism = guest_house & guest_house = bed_and_breakfast { name "${name} ($__BEDANDBREAKFAST__)" | "$__BEDANDBREAKFAST__" } [0x2b02 resolution 22]
-
-# Pension, Gasthaus. [point, closedway]
-tourism = guest_house { name "${name} ($__GUESTHOUSE__)" | "$__GUESTHOUSE__"} [0x2b02 resolution 22]
+# deprecated: tourism = bed_and_breakfast  https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dguest_house
+tourism = bed_and_breakfast & name = * { name "${name} ($__BEDANDBREAKFAST__)" } [0x2b02 resolution 24]
+# New taggin:
+tourism = guest_house & guest_house = bed_and_breakfast & name = * { name "${name} ($__BEDANDBREAKFAST__)" } [0x2b02 resolution 24]
 
 # Campingplatz. [point, closedway]
 tourism = camp_site & name = * {name "${name} ($__CAMPSITE__)"} [0x2b05 resolution 24]
@@ -490,6 +495,8 @@ tourism = caravan_site & name = * {name "${name} ($__CARAVANSITE__)"} [0x2b05 re
 # Ferienwohnung, Ferienhaus, Sennhütte. [point, closedway]
 tourism = chalet { name "${name} ($__CHALET__)" | "$__CHALET__" } [0x2b02 resolution 22]
 
+# Pension, Gasthaus. [point, closedway]
+tourism = guest_house & name = * { name "${name} ($__GUESTHOUSE__)" } [0x2b02 resolution 24]
 
 # Jugendherberge, Herberge, Naturfreundehaus usw. [point, closedway]
 tourism = hostel { name "${name} ($__HOSTEL__)" | "$__HOSTEL__" } [0x2b02 resolution 22]
@@ -1029,7 +1036,10 @@ amenity = post_office {name "${name} ($__POSTOFFICE__)" | "$__POSTOFFICE__"} [0x
 amenity = post_box    {name "Briefkasten (${collection_times})" | "Briefkasten"} [0x2f05 resolution 24]
 
 # Öffentliches Gebäude.
+# deprecated: https://wiki.openstreetmap.org/wiki/DE:Key:amenity
 amenity = public_building & name = * {name "${name} ($__PUBLICBUILDING__)"} [0x3007 resolution 24]
+# New tagging
+building = public & name = * {name "${name} ($__PUBLICBUILDING__)"} [0x3007 resolution 24]
 
 # Rastplatz (Picknick). [point, closedway]
 tourism = picnic_site {name "${name} ($__PICNICSITE__)" | "$__PICNICSITE__"} [0x4a00 resolution 24]
@@ -1253,6 +1263,7 @@ shop = trade & name = * {name "${name} ($__TRADESHOP__)"} [0x2e08 resolution 24]
 # Reifenhandel. [point, closedway]
 shop = tyres & name = * {name "${name} ($__TYRES__)"} [0x2f07 resolution 24]
 
+# Spezialitäteneinzelhandel. [point, closedway]
 shop = florist             & name = * {name "${name} ($__FLORIST__)"} [0x2e0f resolution 24]
 shop = art                 & name = * {name "${name} ($__ARTSHOP__)"} [0x2e10 resolution 24]
 shop = gift                & name = * {name "${name} ($__GIFTSHOP__)"} [0x2e10 resolution 24]
@@ -1262,7 +1273,6 @@ shop = sports              & name = * {name "${name} ($__SPORTSSHOP__)"} [0x2e12
 shop = alcohol & wine = yes & name = * {name "${name} ($__WINESHOP__)"} [0x2e13 resolution 24]
 shop = alcohol             & name = * {name "${name} ($__ALCOHOL__)"} [0x2e13 resolution 24]
 shop = books               & name = * {name "${name} ($__BOOKS__)"} [0x2e14 resolution 24]
-
 # Spezialitäteneinzelhandel. [point, closedway]
 shop = bed                 & name = * {name "${name} ($__BEDSHOP__)"} [0x2e0a resolution 24]
 shop = beverages           & name = * {name "${name} ($__BEVERAGES__)"} [0x2e0a resolution 24]
@@ -1766,7 +1776,8 @@ barrier = lift_gate [0x1210 resolution 24]
 # cemetery = grave & name = * & (wikipedia:de = * | wikipedia = * | website ~ 'wikipedia') {name "${name} (Ruhestaette)"} [0x6405 resolution 24]
 cemetery = grave & name = * & (wikipedia:de = * | wikipedia = * | website = *) {name "${name} ($__GRAVE__)"} [0x6405 resolution 24]
 
-# Sehenswürdigkeit. [point, closedway]
+# allgemeine Sehenswürdigkeit. [point, closedway]
+# (Excluding worship places here, that tag should be stronger than attraction)
 tourism = attraction & name = * {name "${name} ($__ATTRACTION__)"} [0x6600 resolution 24]
 
 # ------------------------------------------------
