@@ -15,6 +15,7 @@ use warnings;
 use English '-no_match_vars';
 
 use Cwd;
+use Cwd 'abs_path';
 use File::Copy;
 use File::Copy "cp";
 use File::Find;
@@ -182,7 +183,7 @@ my %lic_osm = ();
 my %lic_ele = ();
 
 # Read the license default values
-read_default_licenses ();
+#read_default_licenses ();
 
 # FZK maps: static
 my @maps = (
@@ -429,7 +430,7 @@ my $ACTIONTARGET = 4;
 my $LANGCODE = 0;
 my $LANGDESC = 1;
 
-my $VERSION = '1.3.15 - 2019/03/02';
+my $VERSION = '1.3.17 - 2019/04/14';
 
 # Maximale Speichernutzung (Heapsize im MB) beim Splitten und Compilieren
 my $javaheapsize = 1536;
@@ -441,7 +442,12 @@ my $max_jobs = $EMPTY;
 my $max_threads = $EMPTY;
 
 # basepath
-my $BASEPATH = getcwd ( $PROGRAM_NAME );
+# fixed below statment, did only work if cwd was already $BASEPATH
+#my $BASEPATH = getcwd ( $PROGRAM_NAME ) ;
+my $BASEPATH = dirname ( abs_path( $PROGRAM_NAME ) );
+
+# Read the license default values
+read_default_licenses ();
 
 ## Global PC_ReturnCode - used mainly for process_command () - to be rechecked and solved differently eventually
 #my $pc_returncode = 0;
@@ -753,17 +759,17 @@ if ( $nametaglist ne $EMPTY ) {
 # Check / Set DEM options
 if ( $dempath ne $EMPTY ) {
 
-   # In case the dempath does not exist, try to add $BASEPATH in front of it
-   # (in case it was relative)
-   unless ( -e "$dempath" ) {
-     if ( -e "$BASEPATH/$dempath" ) {
-	   $dempath="$BASEPATH/$dempath";
-	 }
-	 else {
-	     die "error: dempath $dempath not existing\n";
-	 }
+   # Create absolute path for dempath: absolut, relativ to cwd or relative to $BASEPATH
+   if ( -e "$BASEPATH/$dempath" ) {
+     $dempath="$BASEPATH/$dempath";
    }
-
+   elsif ( -e "$dempath" ) {
+     $dempath = abs_path( $dempath );
+     }
+   else {
+     die "error: dempath $dempath not existing\n";
+   }
+   
    if (( $demtype ne $EMPTY ) && ( $demdists ne $EMPTY) ) {
  	 printf { *STDOUT } ( "WARNING:\n  --demdists overwrites defaults choosen by --demtype.\n  Make sure this is really what you want\n\n\n" );  
    }
@@ -1239,6 +1245,44 @@ sub check_downloadurls {
 }
 
 # -------------------------------------------
+# Check single URL Routine
+# -------------------------------------------
+sub check_url {
+
+  my $download_src = shift;
+
+  my $returnvalue;
+  my $url_valid = 1;
+
+  if ( ( $OSNAME eq 'darwin' ) || ( $OSNAME eq 'linux' ) || ( $OSNAME eq 'freebsd' ) || ( $OSNAME eq 'openbsd' ) ) {
+    # OS X, Linux, FreeBSD, OpenBSD
+    $command = "curl --output /dev/null --silent --fail --head --url \"$download_src\"";
+
+  }
+  elsif ( $OSNAME eq 'MSWin32' ) {
+    # Windows
+    $command = "$BASEPATH/tools/wget/windows/wget.exe -q --spider \"$download_src\"";
+
+  }
+  else {
+    die ( "\nError: Operating system $OSNAME not supported.\n" );
+    return ( 1 );
+  }
+  
+  # Run the command
+  $returnvalue = system( $command );
+  if ( $returnvalue != 0 ) {
+ 	$url_valid = 0;
+  }
+
+ 
+  # Return the status
+  return ( $url_valid );
+
+}
+
+
+# -------------------------------------------
 # Download URL Routine (used in other places)
 # -------------------------------------------
 sub download_url {
@@ -1374,9 +1418,21 @@ sub fetch_eledata {
     return ( 1 );
   }
   
-  # Try to fetch the additional files *.info *.license
-  download_url( "$eleurl.info", "$filename.info");
-  download_url( "$eleurl.license", "$filename.license");
+  # Try to fetch the additional file *.info
+  if ( check_url( "$eleurl.info" ) ) {
+     download_url( "$eleurl.info", "$filename.info");
+  }
+  else {
+      printf { *STDERR } ( "\nINFORMATION: $eleurl.info not existing.\n" );
+  }
+
+  # Try to fetch the additional file *.license  
+  if ( check_url ( "$eleurl.license" ) ) {
+      download_url ( "$eleurl.license", "$filename.license");
+  }
+  else {
+      printf { *STDERR } ( "\nINFORMATION: $eleurl.license not existing.\n" );
+  }
 
   return;
 }
@@ -1443,9 +1499,9 @@ sub read_licensefile {
 sub read_default_licenses {
 
   # Set filenames
-  my $fzk_licensefile = "licenses/default-freizeitkarte.license";
-  my $osm_licensefile = "licenses/default-osm.license";
-  my $ele_licensefile = "licenses/default-elevation.license";
+  my $fzk_licensefile = "$BASEPATH/licenses/default-freizeitkarte.license";
+  my $osm_licensefile = "$BASEPATH/licenses/default-osm.license";
+  my $ele_licensefile = "$BASEPATH/licenses/default-elevation.license";
     
   # Handle fzk license file
   my %lic_tmphash = ();
