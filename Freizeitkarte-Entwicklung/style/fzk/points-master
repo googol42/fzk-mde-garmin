@@ -373,7 +373,7 @@
 #
 # Optionale Features:
 # - TRIGMARK: Darstellung von Trigonometrischen Markierungen
-# - DRINKINGWATER: Darstellung von Trinkwasserstellen
+# - DRINKINGWATER: Darstellung von Trinkwasserstellen (Not needed anymore, always displayed except NODRINKINGWATER is set)
 # - NODRINKINGWATER: Disable display of Drinkingwater
 # ------------------------------------------------------------
 
