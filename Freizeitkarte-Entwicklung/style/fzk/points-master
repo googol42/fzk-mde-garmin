@@ -988,11 +988,11 @@ amenity = courthouse & name = * {name "${name} ($__COURTHOUSE__)"} [0x3004 resol
 
 # Trinkwasserstelle: Eine öffentlich zugängliche Trinkwasserstelle.
 #ifndef NODRINKINGWATER
-    amenity = drinking_water & drinking_water:legal = yes {name "(ly) ${name} ($__DRINKINGWATER__)" | "(ly) $__DRINKINGWATER__"} [0x6414 resolution 22]
-    amenity = drinking_water & drinking_water = yes       {name "(y) ${name} ($__DRINKINGWATER__)" | "(y) $__DRINKINGWATER__"} [0x6414 resolution 22]
-    amenity = drinking_water & drinking_water:legal = no  {name "(ln) ${name} ($__DRINKINGWATER__)" | "(ln) $__DRINKINGWATER__"} [0x6414 resolution 22]
-    amenity = drinking_water & drinking_water = no        {name "(n) ${name} ($__DRINKINGWATER__)" | "(n) $__DRINKINGWATER__"} [0x6414 resolution 22]
-    amenity = drinking_water                              {name "${name} ($__DRINKINGWATER__)" | "$__DRINKINGWATER__"} [0x6414 resolution 22]
+  amenity = drinking_water & drinking_water:legal = yes {name "(ly) ${name} ($__DRINKINGWATER__)" | "(ly) $__DRINKINGWATER__"} [0x6414 resolution 22]
+  amenity = drinking_water & drinking_water = yes       {name "(y) ${name} ($__DRINKINGWATER__)" | "(y) $__DRINKINGWATER__"} [0x6414 resolution 22]
+  amenity = drinking_water & drinking_water:legal = no  {name "(ln) ${name} ($__DRINKINGWATER__)" | "(ln) $__DRINKINGWATER__"} [0x6414 resolution 22]
+  amenity = drinking_water & drinking_water = no        {name "(n) ${name} ($__DRINKINGWATER__)" | "(n) $__DRINKINGWATER__"} [0x6414 resolution 22]
+  amenity = drinking_water                              {name "${name} ($__DRINKINGWATER__)" | "$__DRINKINGWATER__"} [0x6414 resolution 22]
 #endif
 
 amenity = fountain & drinking_water:legal = yes {name "(ly) ${name} (Springbrunnen)" | "(ly) Springbrunnen"} [0x6415 resolution 24]
